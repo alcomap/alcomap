@@ -8,6 +8,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class App extends React.Component {
     render() {
         return (
+
             <div className='App'>
                 <Map />
             </div>
