@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
 import Map from './Map';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-//var Map = require('./Map.js');
-
-class App extends React.Component {
+class App extends Component {
     render() {
         return (
 
-            <div className='App'>
+            <div className="App">
+            <header className="App-header">
+
+            <h1 className="App-title">AlcoMap</h1>
+            </header>
                 <Map />
             </div>
+
+
         );
     }
 }
