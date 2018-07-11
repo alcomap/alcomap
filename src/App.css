@@ -6,16 +6,19 @@ body{
 
 .App {
   text-align: left;
+  background-color: rgba(37, 100, 113, 0.29);
 }
 
 .App-logo {
   height: 10px;
+
 }
 
 .App-header {
   background-color: #304f6c;
   height: 50px;
   padding: 50px;
+
 }
 
 .Map-pos {
@@ -29,6 +32,7 @@ body{
   color: olivedrab;
 
 }
+
 
 .footer{
     position: relative;

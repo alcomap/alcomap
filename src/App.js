@@ -7,7 +7,6 @@ class App extends Component {
 
             <div className="App">
             <header className="App-header">
-
             <h1 className="App-title">AlcoMap</h1>
             </header>
                 <mapPos className="Map-pos">
