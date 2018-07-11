@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .App {
   text-align: left;
 }
@@ -12,10 +16,10 @@
   padding: 100px;
 }
 
-.App-pos {
+.Map-pos {
   position: relative;
-  right: 1000px;
-  left: 960px;
+  right: 100%;
+  left: 30%;
 }
 
 .App-title {
