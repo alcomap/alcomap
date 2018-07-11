@@ -13,6 +13,8 @@ class App extends Component {
                 <mapPos className="Map-pos">
                     <Map />
                 </mapPos>
+                <div className="footer">Kontakt shit here</div>
+
             </div>
 
 
