@@ -1,6 +1,5 @@
-body{
+.body{
     position: relative;
-
     overflow-x: hidden;
 }
 
@@ -15,7 +14,7 @@ body{
 }
 
 .App-header {
-  background-color: #304f6c;
+  background-color: #212529;
   height: 50px;
   padding: 50px;
 
@@ -24,7 +23,7 @@ body{
 .Map-pos {
   position: relative;
   right: 100%;
-  left: 30%;
+  left: 20%;
 }
 
 .App-title {
@@ -34,13 +33,13 @@ body{
 }
 
 
-.footer{
+.app-footer{
     position: relative;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 4.55rem;
-    background-color: #304f6c;
+    padding: 3.55rem;
+    background-color: #212529;
     text-align: center;
     color: #3fe278;
 }

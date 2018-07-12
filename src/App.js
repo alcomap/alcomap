@@ -5,17 +5,29 @@ class App extends Component {
     render() {
         return (
 
-            <div className="App">
-            <header className="App-header">
-            <h1 className="App-title">AlcoMap</h1>
-            </header>
-                <mapPos className="Map-pos">
-                    <Map />
-                </mapPos>
-                <div className="footer">Kontakt shit here</div>
+            <html>
+                {/* header */}
+                <header className="App-header">
+                </header>
 
-            </div>
+                {/* body */}
+                <body className="body">
+                    <div className="App">
 
+                        <mapPos className="Map-pos">
+                            <Map />
+                        </mapPos>
+
+
+                    </div>
+                </body>
+
+                {/* footer */}
+                <footer className="app-footer">
+                    <p>Derp <a href="">
+                        derpderpderp</a>.</p>
+                </footer>
+            </html>
 
         );
     }
