@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from './components/Map';
+import logo from './amlogo.png';
 
 class App extends Component {
     render() {
@@ -8,6 +9,7 @@ class App extends Component {
             <html>
                 {/* header */}
                 <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
                 </header>
 
                 {/* body */}
