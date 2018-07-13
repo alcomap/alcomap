@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Map from './components/Map';
 import logo from './amlogo.png';
+import MapSettings from "./components/MapSettings";
 
 class App extends Component {
     render() {
@@ -17,10 +18,12 @@ class App extends Component {
                     <div className="App">
 
                         <mapPos className="Map-pos">
-                            <Map />
+                            <Map/>
                         </mapPos>
 
-
+                        <mapSet className="Map-set">
+                            <MapSettings/>
+                        </mapSet>
                     </div>
                 </body>
 

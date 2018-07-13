@@ -17,32 +17,9 @@ class Map extends Component {
         zoom: 13,
         centerAroundCurrentLocation: false
     };
+    
 
 
-    /*
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.google !== this.props.google) {
-            this.loadMap();
-        }
-        if (prevState.currentLocation !== this.state.currentLocation) {
-            this.recenterMap();
-        }
-    }
-
-    recenterMap() {
-        const map = this.map;
-        const curr = this.state.currentLocation;
-
-        const google = this.props.google;
-        const maps = google.maps;
-
-        if (map) {
-            let center = new maps.LatLng(curr.lat, curr.lng)
-            map.panTo(center)
-        }
-    }
-
-    */
 
     componentDidMount() {
         return getCurrentLocation().then(position => {
@@ -64,9 +41,10 @@ class Map extends Component {
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '80%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo" }}
+                    bootstrapURLKeys={{key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo" }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
+                    setPos = {this.componentDidMount()}
                 >
                 </GoogleMapReact>
             </div>
