@@ -1,14 +1,26 @@
+/* global google */
+
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Marker, withGoogleMap, GoogleMap, InfoWindow } from "react-google-maps";
+const google = window.google;
 
+class Map extends React.Component {
+    constructor() {
+        super();
 
-export const getCurrentLocation = () => {
-    return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(position => resolve(position), e => reject(e));
-    });
-};
+        this.state = {
+            latitude: '',
+            longitude: '',
+        };
 
-class Map extends Component {
+        this.getMyLocation = this.getMyLocation.bind(this)
+    }
+
+    componentDidMount() {
+        this.getMyLocation()
+    }
+
     static defaultProps = {
         center: {
             lat: 50.95,
@@ -17,40 +29,45 @@ class Map extends Component {
         zoom: 13,
         centerAroundCurrentLocation: false
     };
-    
 
+    getMyLocation() {
+        const location = window.navigator && window.navigator.geolocation
 
-
-    componentDidMount() {
-        return getCurrentLocation().then(position => {
-            if (position) {
+        if (location) {
+            location.getCurrentPosition((position) => {
                 this.setState({
-                    region: {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                        latitudeDelta: 0.003,
-                        longitudeDelta: 0.003,
-                    },
-                });
-            }
-        });
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                })
+            }, (error) => {
+                this.setState({latitude: 'err-latitude', longitude: 'err-longitude'})
+            })
+        }
     }
 
+
+
     render() {
+        const { latitude, longitude } = this.state
+        const position = [latitude, longitude]
+
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '80%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo" }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
-                    setPos = {this.componentDidMount()}
+                    bootstrapURLKeys={{ key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo" }}
+                    defaultZoom={14}
+                    center={{lat: latitude, lng: longitude}}
                 >
+
+
                 </GoogleMapReact>
             </div>
         );
     }
 }
 
-//module.export = Map;
+/*<Marker
+    position={position}
+/>*/
 export default Map;
