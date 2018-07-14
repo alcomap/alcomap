@@ -5,9 +5,11 @@
   "dependencies": {
     "bootstrap": "^4.1.2",
     "google-map-react": "^1.0.5",
+    "rc-slider": "^8.6.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-google-maps": "^9.4.5",
     "react-rangeslider": "^2.2.0",
     "react-scripts": "1.1.4"
   },
